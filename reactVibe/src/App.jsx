@@ -17,16 +17,8 @@ function App() {
   }
   
   const [toDoList, setToDoList] = useState([
-    {id: 1, name: "test"},
-    {id: 2, name: "hi"},
-
   ])
-  const name = "longkute"
-  const age = 25;
-  const data = {
-    address: "hanoi",
-    country: "vietnam"
-  }
+ 
   const addNewToDo = (name) => {
     
     const newToDo = {
@@ -44,9 +36,7 @@ function App() {
      
       />
       <ToDoData
-      name = {name}
-      age = {age}
-      data = {data}
+      
       toDoList = {toDoList}
       />
       <div className="todo-image">
