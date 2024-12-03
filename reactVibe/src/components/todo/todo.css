@@ -1,0 +1,67 @@
+#todo-input-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .todo-input-field {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .todo-input-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .todo-input-button:hover {
+    background-color: #45a049;
+  }
+  .todo-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+  }
+  
+  .todo-checkbox {
+    cursor: pointer;
+  }
+  
+  .todo-text {
+    flex: 1;
+    font-size: 16px;
+  }
+  
+  .todo-text.completed {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+  
+  .todo-delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .todo-delete-button:hover {
+    background-color: #e43d3d;
+  }
+  #todo-list-container {
+    margin-top: 16px;
+  }
+  
+  .no-todos-message {
+    color: #666;
+    font-size: 14px;
+  }
+    

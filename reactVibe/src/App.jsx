@@ -1,30 +1,60 @@
-import reactLogo  from "./assets/react.svg";
-import TodoData from "./components/todo/toDoData";
 
-import TodoNew from "./components/todo/toDoNew";
+import { useState } from "react";
+import ToDoData from "./components/todo/toDoData.jsx";
+import ToDoNew from "./components/todo/toDoNew.jsx";
+import reactLogo from "./assets/react.svg" 
 
 
 
 
 function App() {
-  // const newtodo = {
-  //   name: "Longkute",
-  //   age: 25,
-  //   address: {
-  //     country: VietNam
-  //   }
-  // }
+  // setInterval(() => {
+  //   const randomId = parseInt(Math.random(0, 10000) * 10) 
+  // console.log(randomId);
+  // }, 2000);
+  function getRandomArbitrary(min, max) {
+    return parseInt(Math.random() * (max - min + 1) + min) 
+  }
+  
+  const [toDoList, setToDoList] = useState([
+    {id: 1, name: "test"},
+    {id: 2, name: "hi"},
+
+  ])
+  const name = "longkute"
+  const age = 25;
+  const data = {
+    address: "hanoi",
+    country: "vietnam"
+  }
+  const addNewToDo = (name) => {
+    
+    const newToDo = {
+      id: getRandomArbitrary(1,10000),
+      name: name
+    }
+    setToDoList([...toDoList, newToDo])
+
+  }
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
-      <TodoNew/>
-      <TodoData/>
+      <ToDoNew
+      addNewToDo = {addNewToDo}
+     
+      />
+      <ToDoData
+      name = {name}
+      age = {age}
+      data = {data}
+      toDoList = {toDoList}
+      />
       <div className="todo-image">
         <img src={reactLogo} className="logo" />
       </div>
     </div>
   )
-  
+   
 }
 
-export default App
+export default App;
