@@ -2,7 +2,7 @@ import { useState } from "react";
 import ToDoData from "./components/todo/toDoData.jsx";
 import ToDoNew from "./components/todo/toDoNew.jsx";
 import reactLogo from "./assets/react.svg";
-import "./app.css";
+
 
 function App() {
   function GetRandomArbitrary(min, max) {
