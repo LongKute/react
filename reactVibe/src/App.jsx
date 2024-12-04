@@ -4,14 +4,13 @@ import ToDoNew from "./components/todo/toDoNew.jsx";
 import reactLogo from "./assets/react.svg";
 import Header from "./components/layout/header.jsx";
 import Footer from "./components/layout/footer.jsx";
+import { Outlet } from "react-router";
 
 function App() {
-
   const [toDoList, setToDoList] = useState([]);
   function GetRandomArbitrary(min, max) {
     return parseInt(Math.random() * (max - min + 1) + min);
   }
-
 
   const deleteBtn = (id) => {
     const updatedList = toDoList.filter((item) => item.id !== id);
@@ -28,6 +27,7 @@ function App() {
   return (
     <>
       <Header />
+      <Outlet/>
       <div className="todo-container">
         <div className="todo-title">Todo List</div>
         <ToDoNew addNewToDo={addNewToDo} />
@@ -39,7 +39,7 @@ function App() {
           </a>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
