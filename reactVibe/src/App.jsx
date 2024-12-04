@@ -5,19 +5,21 @@ import reactLogo from "./assets/react.svg";
 import "./app.css";
 
 function App() {
-  // setInterval(() => {
-  //   const randomId = parseInt(Math.random(0, 10000) * 10)
-  // console.log(randomId);
-  // }, 2000);
-  function getRandomArbitrary(min, max) {
+  function GetRandomArbitrary(min, max) {
     return parseInt(Math.random() * (max - min + 1) + min);
   }
 
   const [toDoList, setToDoList] = useState([]);
+  
+  const deleteBtn = (id) => {
+    const updatedList = toDoList.filter((item) => item.id!== id);
+    setToDoList(updatedList);
+    
+  }
 
   const addNewToDo = (name) => {
     const newToDo = {
-      id: getRandomArbitrary(1, 10000),
+      id: GetRandomArbitrary(1, 10000),
       name: name,
     };
     setToDoList([...toDoList, newToDo]);
@@ -27,7 +29,7 @@ function App() {
       <div className="todo-title">Todo List</div>
       <ToDoNew addNewToDo={addNewToDo} />
       {toDoList.length > 0 ? (
-        <ToDoData toDoList={toDoList} />
+        <ToDoData toDoList={toDoList} deleteBtn={deleteBtn}/>
       ) : (
         <a className="logo" href="https://react.dev/" target="_blank">
           <img src={reactLogo} className="logo_react" />

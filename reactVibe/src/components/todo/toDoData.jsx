@@ -1,20 +1,26 @@
 const TodoData = (props) => {
-  const { toDoList } = props;
-  console.log("check point: ", toDoList);
-
-
-
-  return ( 
+  const{ toDoList , deleteBtn} = props;
+//   console.log(props.toDoList[1].id);
+  
+  
+//   console.log("check point: ", toDoList);
+//button with filter
+const HandleClick = (id) => {
+  deleteBtn(id)
+  };
+//button with filter end
+  
+  return (
     <div className="todo-data">
-        {toDoList.map((item, index) => {
-            // console.log(">>> check: ", item, index);
-            return (<div className="todo-item" key = {item.id}>
-                {item.name}
-                <button>Delete</button>
-            </div>)
-        })}
-     
-     
+      {toDoList.map((item, index) => {
+        // console.log(">>> check: ", item, index);
+        return (
+          <div className="todo-item" key={item.id}>
+            {item.name}
+            <button onClick={() => HandleClick(item.id)}>Delete</button>
+          </div>
+        );
+      })}
     </div>
   );
 };
