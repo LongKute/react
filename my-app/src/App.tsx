@@ -26,14 +26,14 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-blue-50 to-indigo-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-linear-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-lg">D</span>
                 </div>
                 <h1 className="text-xl font-bold text-gray-900">Dashboard</h1>
@@ -47,7 +47,7 @@ function App() {
                   </svg>
                   <span>Notifications</span>
                 </div>
-                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                <div className="w-8 h-8 bg-linear-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
                   JD
                 </div>
               </div>
@@ -101,7 +101,7 @@ function App() {
               </div>
             </div>
             <div className="text-center py-8">
-              <div className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-32 h-32 bg-linear-to-br from-indigo-500 to-purple-600 rounded-full mb-6">
                 <span className="text-5xl font-bold text-white">{count}</span>
               </div>
               <div className="flex items-center justify-center space-x-4">
@@ -121,7 +121,7 @@ function App() {
                 </button>
                 <button
                   onClick={() => setCount(count + 1)}
-                  className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-full flex items-center justify-center transition-all shadow-lg hover:shadow-xl"
+                  className="w-12 h-12 bg-linear-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-full flex items-center justify-center transition-all shadow-lg hover:shadow-xl"
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -140,7 +140,7 @@ function App() {
             <div className="space-y-4">
               {recentActivities.map((activity) => (
                 <div key={activity.id} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg flex items-center justify-center">
+                  <div className="shrink-0 w-10 h-10 bg-linear-to-br from-indigo-100 to-purple-100 rounded-lg flex items-center justify-center">
                     {activity.type === 'order' && '📦'}
                     {activity.type === 'payment' && '💳'}
                     {activity.type === 'user' && '👤'}
